@@ -1,0 +1,11 @@
+//Most optimized algorithm as it does (2^n)-1 number of operations
+
+Algorithm towerOfHanoi(n,CurrPeg,InterPeg,DestPeg){
+	if n==1 then
+		write CurrPeg->DestPeg
+	else{
+		towerOfHanoi(n-1,CurrPeg,DestPeg,InterPeg)
+		write CurrPeg->DestPeg
+		towerOfHanoi(n-1,InterPeg,CurrPeg,DestPeg)
+	}
+}

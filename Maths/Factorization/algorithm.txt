@@ -1,0 +1,15 @@
+Algorithm factorize(num){
+	if num!=1 then{
+		for i:=2 to sqrt(num) do{
+			if num%i=0 then{
+				write i;
+				factorize(num/i);
+				return;
+			}
+		}
+
+		write num;
+	}
+
+	return ;
+}

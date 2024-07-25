@@ -1,0 +1,35 @@
+//beg:=0
+
+Algorithm permutation(A,size,beg){
+	if beg=size-1 then 
+		write A[1:n];
+	else{
+		for i:=beg to size-1, do{
+			swap(A[i],A[beg]);
+			permutation(A,size,beg+1);
+			swap(A[i],A[beg]);
+		}
+	}
+	
+	return;
+}
+
+Time Complexity: O(n!)
+Space Complexity: O(n)
+
+Example:
+
+A:= "abc"
+
+Recursive Procedure
+
+abc
+	abc
+		abc
+		acb
+	bac
+		bac
+		bca
+	cba
+		cba
+		cab

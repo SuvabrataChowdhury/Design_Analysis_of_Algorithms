@@ -1,0 +1,37 @@
+//Not the most optimized algorithm as it does (2^(n+1))-1 number of operations:
+
+Algorithm Hanoi(n,currPeg,auxPeg,targetPeg){
+	if(n>=1) then{
+		Hanoi(n-1,currPeg,targetPeg,auxPeg);
+		write currPeg->targetPeg;
+		Hanoi(n-1,aulxPeg,currPeg,targetPeg);
+	}
+	
+	return;
+}
+
+Example:
+
+Hanoi(3,a,b,c)
+	Hanoi(2,a,c,b)
+		Hanoi(1,a,b,c)
+			Hanoi(0,a,c,b)
+			a->c
+			Hanoi(0,b,a,c)
+		a->b
+		Hanoi(1,c,a,b)
+			Hanoi(0,c,b,a)
+			c->b
+			Hanoi(0,a,c,b)
+	a->c
+	Hanoi(2,b,a,c)
+		Hanoi(1,b,c,a)
+			Hanoi(0,b,c,a)
+			b->a
+			Hanoi(0,c,b,a)
+		b->c
+		Hanoi(1,a,b,c)
+			Hanoi(0,a,c,b)
+			a->c
+			Hanoi(0,c,a,b)
+
